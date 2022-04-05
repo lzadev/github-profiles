@@ -1,0 +1,35 @@
+<div class="grid mt-2">
+  <div class="col-12 md:col-4 lg:col-4" *ngFor="let user of users">
+    <p-card>
+      <div class="grid">
+        <div class="col-2 md:col-2 lg:col-2">
+          <p-avatar
+            [image]="user.avatar_url"
+            size="xlarge"
+            shape="circle"
+          ></p-avatar>
+        </div>
+        <div class="col-9 md:col-9 lg:col-9 ml-4">
+          <i class="pi pi-github"></i>
+          <a
+            [href]="user.html_url"
+            target="_blank"
+            class="font-bold w-10 ml-1"
+            >{{ user.login | titlecase }}</a
+          >
+          <div class="mt-1">
+            <i class="pi pi-desktop mr-1"></i
+            ><span class="font-medium"
+              >Repositories {{ user.public_repos }}</span
+            >
+            <br />
+            <i class="pi pi-user-plus mr-1"></i
+            ><span class="font-medium"
+              >Followers {{ user.followers | number }}</span
+            >
+          </div>
+        </div>
+      </div>
+    </p-card>
+  </div>
+</div>
